@@ -16,12 +16,9 @@ console.log('Dice2: ' + dice2);
 if (randomNumber1 > randomNumber2) {    
     document.querySelector('h1').innerHTML = 'Player 1 Wins!'
 }
-
-if (randomNumber1 < randomNumber2) {    
+else if (randomNumber1 < randomNumber2) {    
     document.querySelector('h1').innerHTML = 'Player 2 Wins!'
 }
-
-
-if (randomNumber1 === randomNumber2) {    
+else if (randomNumber1 === randomNumber2) {    
     document.querySelector('h1').innerHTML = 'Its a tie!'
 }
