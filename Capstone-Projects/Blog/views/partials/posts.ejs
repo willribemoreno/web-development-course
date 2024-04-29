@@ -1,0 +1,22 @@
+<% for (let i=0; i < postsLenght; i++) { %>
+  <article class="margin-left">
+    <h1 class="fs-1 mb-1 text-body-emphasis">
+      <%= posts[i].title %>
+        </h2>
+        <p class="fs-4 mb-1">
+          <%= posts[i].message %>
+        </p>
+        <% const
+          month=["January","February","March","April","May","June","July","August","September","October","November","December"];
+          const date=new Date();%>
+          <p class="blog-post-meta mb-1">
+            <%= month[date.getMonth()] %>
+              <%= date.getDay() %>, <%= date.getFullYear() %> by
+                  <a href="mailto:<%= posts[i].email %>">
+                    <%= posts[i].name %>
+                  </a>
+          </p>
+  </article>
+  <hr>
+  <% } %>
+    <% console.log(postsLenght) %>
