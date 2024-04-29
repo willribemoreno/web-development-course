@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Name Letters</title>
+</head>
+
+<body>
+  <% if (typeof count === "undefined") { %>
+    <%- "<h1>Write your name below 👇</h1>" %>
+    <% } else if (count === 0) { %>
+      <h1>Please, you need to type something on "First name" or "Last name" field</h1>
+    <% } else { %>
+      <h1>There are <%= count %> letter in your name.</h1>
+      <% } %>
+  <form action="/submit" method="POST">
+    <input type="text" name="fName" placeholder="First name">
+    <input type="text" name="lName" placeholder="Last name">
+    <input type="submit" value="OK">
+  </form>
+  <a></a>
+</body>
+
+</html>

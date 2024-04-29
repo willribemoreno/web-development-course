@@ -1,0 +1,33 @@
+import express from "express";
+import bodyParser from "body-parser";
+
+const app = express();
+const port = 3000;
+
+function logger(req, res, next) {
+  console.log("Request Method: ", req.method);
+  console.log("Request URL: ", req.url);
+  next();
+}
+
+app.use(logger);
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+app.get("/", (req, res) => {
+  res.render("index.ejs");
+});
+
+app.post("/submit", (req, res) => {
+  const data = {
+    "firstName": req.body["fName"],
+    "lastName": req.body["lName"],
+    "count": String(req.body["fName"] + req.body["lName"]).length
+  }
+  console.log("firstName", req.body);
+  res.render("index.ejs", data);
+});
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
